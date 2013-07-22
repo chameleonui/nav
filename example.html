@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <title>Nav – Chameleon UI</title>
+    <link rel="stylesheet" href="example.css" />
+    <style>
+        .is-hidden{
+            display: none;
+        }
+    </style>
+    
+</head>
+<body>
+    <h1>Nav – Chameleon UI</h1>
+    <hr />
+    <ul class="nav-inline">
+        <li><a href="#i1">One</a></li>
+        <li><a href="#i1">Two</a></li>
+        <li><a href="#i1">Three</a></li>
+        <li class="is-active"><a href="#i1">Four</a></li>
+        <li><a href="#i1">Five</a></li>
+    </ul>
+    <hr />
+    <ul class="nav nav-stacked">
+        <li><a href="#i1">One</a></li>
+        <li class="is-active"><a href="#i1">Two</a></li>
+        <li><a href="#i1">Three</a></li>
+        <li><a href="#i1">Four</a></li>
+        <li><a href="#i1">Five</a></li>
+    </ul>
+    <hr />
+    <ul class="nav nav-tabs">
+        <li><a href="#info1">One</a></li>
+        <li><a href="#info2">Two</a></li>
+        <li class="is-active"><a href="#info3">Three</a></li>
+        <li><a href="#info4">Four</a></li>
+        <li><a href="#info5">Five</a></li>
+    </ul>
+    
+    <p id="info1">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Numquam, sit, eius cum a accusamus debitis id excepturi molestiae molestias ducimus.</p>
+    <p id="info2">Dicta, praesentium sed doloremque dolorum vel assumenda harum magnam aliquam sapiente alias quibusdam vitae architecto quos autem tempora molestiae distinctio.</p>
+    <p id="info3">Praesentium, facilis, est, nisi, vero itaque quisquam facere tempore excepturi unde explicabo eum quasi rem obcaecati numquam quo eos cupiditate.</p>
+    <p id="info4">Cupiditate, fuga, dolor, repudiandae nostrum eligendi amet nam sequi est eum voluptatibus quisquam officiis consequuntur ad velit iure eos unde.</p>
+    <p id="info5">Deleniti, delectus, recusandae at animi molestias maxime mollitia modi nostrum unde autem numquam odio et fugit asperiores necessitatibus assumenda saepe?</p>
+
+    <script src="build/build.js"></script>
+    <script>
+        var Tabs = require('nav/tabs');
+        var nav = new Tabs();
+    </script>
+</body>
+</html>

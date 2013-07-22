@@ -1,0 +1,20 @@
+{
+  "name": "nav",
+  "repo": "chameleonui/nav",
+  "description": "Basic types of navigation",
+  "version": "1.0.0",
+  "keywords": [],
+  "dependencies": {
+    "chameleonui/utils": "*",
+    "component/jquery": "*"
+  },
+  "development": {},
+  "license": "MIT",
+  "styles": [
+    "nav.styl"
+  ],
+  "scripts": [
+    "tabs/index.js",
+    "index.js"
+  ]
+}

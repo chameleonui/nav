@@ -1,0 +1,140 @@
+// =============================================================================
+// Navigation
+// =============================================================================
+
+
+// Use flags
+// =============================================================================
+use-nav-inline ?= true;
+use-nav-stacked ?= true;
+use-nav-tabs ?= true;
+
+// Variables
+// =============================================================================
+
+nav-inline-class ?= "nav-inline";
+nav-inline-margin ?= 0 0 1;
+nav-inline-padding ?= 0;
+nav-inline-item-padding ?= .25;
+
+nav-stacked-class ?= "nav-stacked";
+nav-stacked-margin ?= 0 0 1;
+nav-stacked-padding ?= 0;
+nav-stacked-item-padding ?= .25;
+
+nav-tabs-class ?= "nav-tabs";
+nav-tabs-margin ?= 0 0 1;
+nav-tabs-padding ?= 0;
+nav-tabs-item-padding ?= .25 .5;
+nav-tabs-item-border-color ?= #999;
+nav-tabs-item-border-width ?= 1px;
+nav-tabs-item-border-style ?= solid;
+nav-tabs-item-border-radius ?= 3px;
+nav-tabs-item-active-bg-color ?= #fff;
+
+
+// Mixins
+// =============================================================================
+nav-styl(){
+    margin: 0;
+    width: 100%;
+    padding: 0;
+    list-style: none;
+    clearfix();
+    
+    > li {
+        display: block;
+
+        > a {
+            display: block;
+            text-decoration: none;
+            
+            &:hover,
+            &:focus {
+                text-decoration: none;
+            }         
+            
+            // Prevent IE8 from misplacing imgs
+            // See https://github.com/h5bp/html5-boilerplate/issues/984#issuecomment-3985989
+            > img {
+                max-width: none;
+            }
+        }
+    }
+    
+    > li.is-active > a {
+        text-decoration: none;
+    }
+
+    &.align-right {
+        float: right;
+    }
+        
+
+}
+// =============================================================================
+
+nav(){
+    if (use-nav-inline || use-nav-stacked || use-nav-tabs) {
+        .{nav-inline-class},
+        .{nav-stacked-class},
+        .{nav-tabs-class} {
+            nav-styl();
+        }
+    } // end if
+
+    if (use-nav-inline || use-nav-tabs) {
+        .{nav-inline-class} > li,
+        .{nav-tabs-class} > li {
+            float: left
+        }
+    } // end if
+    
+    if (use-nav-inline) {
+        .{nav-inline-class}{
+            padding: nav-inline-padding;
+
+            > li > a {
+                padding: nav-inline-item-padding;
+            }
+        } 
+    } // end if
+    
+    if (use-nav-stacked) {
+        .{nav-stacked-class}{
+            padding: nav-stacked-padding;
+
+            > li > a {
+                padding: nav-stacked-item-padding;
+            }
+        }
+    } // end if
+    
+    if (use-nav-tabs) {
+        .{nav-tabs-class}{
+            border-bottom: 1px solid nav-tabs-item-border-color;
+            padding: nav-tabs-padding;
+
+            > li {
+                margin-bottom: -2px;
+            }
+
+            > li > a {
+                padding: nav-tabs-item-padding;
+                border-radius: nav-tabs-item-border-radius nav-tabs-item-border-radius 0 0;
+                border-bottom: 0 none;
+            }
+
+            > li.is-active > a {
+                border-width: nav-tabs-item-border-width;
+                border-style: nav-tabs-item-border-style;
+                border-color: nav-tabs-item-border-color;
+                border-bottom-color: nav-tabs-item-active-bg-color;
+                background: nav-tabs-item-active-bg-color;
+            }
+        }
+    } // end if
+}
+
+
+
