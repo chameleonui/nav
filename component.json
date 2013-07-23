@@ -2,7 +2,7 @@
   "name": "nav",
   "repo": "chameleonui/nav",
   "description": "Basic types of navigation",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "keywords": [],
   "dependencies": {
     "chameleonui/utils": "*",
